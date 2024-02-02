@@ -24,16 +24,16 @@ public class PaymentCard {
     private CreditCardType creditCardType;
     private String pin;
 
-    public PaymentCard(CreditCardProvider creditCardProvider, String cardNumber, String expirationDate, String cvc,
-                       String ownerName, CreditCardType creditCardType, String pin) {
-        this.creditCardProvider = creditCardProvider;
-        this.cardNumber = cardNumber;
-        this.expirationDate = expirationDate;
-        this.cvc = cvc;
-        this.ownerName = ownerName;
-        this.creditCardType = creditCardType;
-        this.pin = pin;
-    }
+//    public PaymentCard(CreditCardProvider creditCardProvider, String cardNumber, String expirationDate, String cvc,
+//                       String ownerName, CreditCardType creditCardType, String pin) {
+//        this.creditCardProvider = creditCardProvider;
+//        this.cardNumber = cardNumber;
+//        this.expirationDate = expirationDate;
+//        this.cvc = cvc;
+//        this.ownerName = ownerName;
+//        this.creditCardType = creditCardType;
+//        this.pin = pin;
+//    }
 
     public CreditCardProvider getCreditCardProvider() {
         return creditCardProvider;

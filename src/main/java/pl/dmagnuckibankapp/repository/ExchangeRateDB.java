@@ -17,7 +17,7 @@ public class ExchangeRateDB {
 
     public ExchangeRateDB() throws MySQLException {
         this.exchangeRates = new HashMap<>();
-        initializeExchangeRatesFromDatabase();
+//        initializeExchangeRatesFromDatabase();
     }
 
     private void initializeExchangeRatesFromDatabase() throws MySQLException {

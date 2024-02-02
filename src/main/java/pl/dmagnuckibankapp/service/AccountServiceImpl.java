@@ -7,6 +7,7 @@ public class AccountServiceImpl implements AccountService{
     @Override
     public void createAccount(AccountDto accountDto) {
 // TODO: Dodaj odpowiedni kod obsługi metody
+        System.out.println(accountDto);
     }
 
     @Override

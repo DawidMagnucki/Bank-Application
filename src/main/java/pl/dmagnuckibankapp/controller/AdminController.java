@@ -1,15 +1,12 @@
 package pl.dmagnuckibankapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.dmagnuckibankapp.dto.AdminDto;
-import pl.dmagnuckibankapp.exception.CrudOperationRequestException;
 import pl.dmagnuckibankapp.service.AdminService;
 
+@RequestMapping("/admin")
 @RestController
 public class AdminController {
 
@@ -20,45 +17,27 @@ public class AdminController {
         this.adminService = adminService;
     }
 
-    @PostMapping ("/createAdmin")
+    @PostMapping("/create")
     public void createAdmin(@RequestBody AdminDto adminDto) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla createAdmin
-            adminService.createAdmin(adminDto);
-        } catch (CrudOperationRequestException e){
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla createAdmin
+        adminService.createAdmin(adminDto);
     }
-
-    @PostMapping ("/getAdmin")
+    @GetMapping("/get")
     public ResponseEntity<AdminDto> getAdmin(@RequestBody String indexNumber) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla getAdmin
-            AdminDto adminDto = null;
-            return ResponseEntity.ok(adminDto);
-        } catch (CrudOperationRequestException e){
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla getAdmin
+        AdminDto adminDto = null;
+        return ResponseEntity.ok(adminDto);
     }
 
-    @PostMapping ("/updateAdmin")
+    @PutMapping("/update")
     public void updateAdmin(@RequestBody String indexNumber, AdminDto adminDto) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla updateAdmin
-            adminService.updateAdmin(indexNumber, adminDto);
-        } catch (CrudOperationRequestException e){
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla updateAdmin
+        adminService.updateAdmin(indexNumber, adminDto);
     }
 
-    @PostMapping ("/deleteAdmin")
+    @DeleteMapping("/delete")
     public void deleteAdmin(@RequestBody String indexNumber) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla deleteAdmin
-            adminService.deleteAdmin(indexNumber);
-        } catch (CrudOperationRequestException e){
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla deleteAdmin
+        adminService.deleteAdmin(indexNumber);
     }
 }

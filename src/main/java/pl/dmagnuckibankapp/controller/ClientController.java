@@ -1,15 +1,12 @@
 package pl.dmagnuckibankapp.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.dmagnuckibankapp.dto.ClientDto;
-import pl.dmagnuckibankapp.exception.CrudOperationRequestException;
 import pl.dmagnuckibankapp.service.ClientService;
 
+@RequestMapping("/client")
 @RestController
 public class ClientController {
     private ClientService clientService;
@@ -19,45 +16,28 @@ public class ClientController {
         this.clientService = clientService;
     }
 
-    @PostMapping("/createClient")
+    @PostMapping("/create")
     public void createClient(@RequestBody ClientDto clientDto) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla createClient
-            System.out.println(clientDto);
-        } catch (CrudOperationRequestException e) {
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla createClient
+        System.out.println(clientDto);
     }
 
-    @PostMapping("/getClient")
+    @GetMapping("/get")
     public ResponseEntity<ClientDto> getClient(@RequestBody String idCard) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla getClient
-            ClientDto clientDto = null;
-            return ResponseEntity.ok(clientDto);
-        } catch (CrudOperationRequestException e) {
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla getClient
+        ClientDto clientDto = null;
+        return ResponseEntity.ok(clientDto);
     }
 
-    @PostMapping("/updateClient")
+    @PutMapping("/update")
     public void updateClient(@RequestBody String idCard) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla updateClient
-            System.out.println(idCard);
-        } catch (CrudOperationRequestException e) {
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla updateClient
+        System.out.println(idCard);
     }
 
-    @PostMapping("/deleteClient")
+    @DeleteMapping("/delete")
     public void deleteClient(@RequestBody ClientDto clientDto) {
-        try {
-            // TODO: Dodaj odpowiedni kod obsługi dla deleteClient
-            System.out.println(clientDto);
-        } catch (CrudOperationRequestException e) {
-            System.err.println("Error while processing request. Please try again." + e.getMessage());
-        }
+        // TODO: Dodaj odpowiedni kod obsługi dla deleteClient
+        System.out.println(clientDto);
     }
 }
