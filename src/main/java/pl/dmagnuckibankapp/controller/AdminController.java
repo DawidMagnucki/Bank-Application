@@ -25,8 +25,7 @@ public class AdminController {
     @GetMapping("/get")
     public ResponseEntity<AdminDto> getAdmin(@RequestBody String indexNumber) {
         // TODO: Dodaj odpowiedni kod obsługi dla getAdmin
-        AdminDto adminDto = null;
-        return ResponseEntity.ok(adminDto);
+        adminService.getAdmin(indexNumber);
     }
 
     @PutMapping("/update")

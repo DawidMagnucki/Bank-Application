@@ -19,25 +19,24 @@ public class ClientController {
     @PostMapping("/create")
     public void createClient(@RequestBody ClientDto clientDto) {
         // TODO: Dodaj odpowiedni kod obsługi dla createClient
-        System.out.println(clientDto);
+        clientService.createClient(clientDto);
     }
 
     @GetMapping("/get")
     public ResponseEntity<ClientDto> getClient(@RequestBody String idCard) {
         // TODO: Dodaj odpowiedni kod obsługi dla getClient
-        ClientDto clientDto = null;
-        return ResponseEntity.ok(clientDto);
+        clientService.getClient(idCard);
     }
 
     @PutMapping("/update")
     public void updateClient(@RequestBody String idCard) {
         // TODO: Dodaj odpowiedni kod obsługi dla updateClient
-        System.out.println(idCard);
+        clientService.updateClient(idCard);
     }
 
     @DeleteMapping("/delete")
     public void deleteClient(@RequestBody ClientDto clientDto) {
         // TODO: Dodaj odpowiedni kod obsługi dla deleteClient
-        System.out.println(clientDto);
+        clientService.deleteClient(clientDto);
     }
 }

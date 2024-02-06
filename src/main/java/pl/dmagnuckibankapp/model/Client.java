@@ -15,15 +15,15 @@ import java.time.LocalDate;
 @Setter
 public class Client {
     private String fullName;
-    private LocalDate dateOfBirth;
-    private String email;
-    private String phoneNumber;
-    private String residentialAddress;
     private String idCard;
-    private EmploymentStatus employmentStatus;
-    private String occupation;
-    private double annualIncome;
-    private Permissions permissions;
+//    private LocalDate dateOfBirth;
+//    private String email;
+//    private String phoneNumber;
+//    private String residentialAddress;
+//    private EmploymentStatus employmentStatus;
+//    private String occupation;
+//    private double annualIncome;
+//    private Permissions permissions;
 
 }
 

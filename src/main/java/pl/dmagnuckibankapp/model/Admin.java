@@ -14,8 +14,8 @@ public class Admin {
     private String username;
     private String password;
     private String indexNumber;
-    private String email;
-    private String phoneNumber;
-    private Permissions permissions;
+//    private String email;
+//    private String phoneNumber;
+//    private Permissions permissions;
 
 }

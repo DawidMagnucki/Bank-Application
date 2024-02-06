@@ -25,17 +25,16 @@ public class AccountController {
     @GetMapping("/get")
     public ResponseEntity<AccountDto> getAccount(@RequestBody String accountNumber) {
         // TODO: Dodaj odpowiedni kod obsługi dla getAccount
-        AccountDto accountDto = null;
-        return ResponseEntity.ok(accountDto);
+        accountService.getAccount(accountNumber);
     }
     @PutMapping("/update")
     public void updateAccount(@RequestBody AccountDto accountDto, String accountName) {
         // TODO: Dodaj odpowiedni kod obsługi dla updateAccount
-        System.out.println(accountDto);
+        accountService.updateAccount(accountDto,accountName);
     }
     @DeleteMapping("/delete")
     public void deleteAccount(@RequestBody AccountDto accountDto) {
         // TODO: Dodaj odpowiedni kod obsługi dla deleteAccount
-        System.out.println(accountDto);
+        accountService.deleteAccount(accountDto);
     }
 }
