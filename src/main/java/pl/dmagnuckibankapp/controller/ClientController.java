@@ -25,7 +25,8 @@ public class ClientController {
     @GetMapping("/get")
     public ResponseEntity<ClientDto> getClient(@RequestBody String idCard) {
         // TODO: Dodaj odpowiedni kod obsługi dla getClient
-        clientService.getClient(idCard);
+        ClientDto clientDto = clientService.getClient(idCard);
+        return ResponseEntity.ok(clientDto);
     }
 
     @PutMapping("/update")

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.dmagnuckibankapp.dto.AccountDto;
 import pl.dmagnuckibankapp.service.AccountService;
 
-@RequestMapping("/accounts")
+@RequestMapping("/account")
 @RestController
 public class AccountController {
 
@@ -19,22 +19,19 @@ public class AccountController {
 
     @PostMapping("/create")
     public void createAccount(@RequestBody AccountDto accountDto) {
-        // TODO: Dodaj odpowiedni kod obsługi dla createAccount
         accountService.createAccount(accountDto);
     }
-    @GetMapping("/get")
-    public ResponseEntity<AccountDto> getAccount(@RequestBody String accountNumber) {
-        // TODO: Dodaj odpowiedni kod obsługi dla getAccount
-        accountService.getAccount(accountNumber);
+    @GetMapping("/get/{accountNumber}")
+    public ResponseEntity<AccountDto> getAccount(@PathVariable String accountNumber) {
+        AccountDto accountDto = accountService.getAccount(accountNumber);
+        return ResponseEntity.ok(accountDto);
     }
-    @PutMapping("/update")
-    public void updateAccount(@RequestBody AccountDto accountDto, String accountName) {
-        // TODO: Dodaj odpowiedni kod obsługi dla updateAccount
-        accountService.updateAccount(accountDto,accountName);
+    @PutMapping("/update/{accountNumber}")
+    public void updateAccount(@RequestBody AccountDto accountDto, @PathVariable String accountNumber) {
+        accountService.updateAccount(accountDto,accountNumber);
     }
     @DeleteMapping("/delete")
     public void deleteAccount(@RequestBody AccountDto accountDto) {
-        // TODO: Dodaj odpowiedni kod obsługi dla deleteAccount
         accountService.deleteAccount(accountDto);
     }
 }

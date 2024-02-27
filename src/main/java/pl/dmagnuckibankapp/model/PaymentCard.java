@@ -1,28 +1,35 @@
 package pl.dmagnuckibankapp.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.*;
 import pl.dmagnuckibankapp.enums.CreditCardProvider;
 import pl.dmagnuckibankapp.enums.CreditCardType;
 
 import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
+@Builder
+@Data
+
 public class PaymentCard {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private CreditCardProvider creditCardProvider;
     private String cardNumber;
     private String expirationDate;
-    private String cvc;
-    private String ownerName;
-    private CreditCardType creditCardType;
-    private String pin;
+
+//    private String cvc;
+//    private String ownerName;
+//    private CreditCardType creditCardType;
+//    private String pin;
 
 //    public PaymentCard(CreditCardProvider creditCardProvider, String cardNumber, String expirationDate, String cvc,
 //                       String ownerName, CreditCardType creditCardType, String pin) {
@@ -35,73 +42,30 @@ public class PaymentCard {
 //        this.pin = pin;
 //    }
 
-    public CreditCardProvider getCreditCardProvider() {
-        return creditCardProvider;
-    }
+//    public void setExpirationDate(String expirationDate) {
+//        if (isValidExpirationDate(expirationDate)) {
+//            this.expirationDate = expirationDate;
+//        } else {
+//            throw new IllegalArgumentException("Invalid expiration date format. Please use MM/YY.");
+//        }
+//    }
+//
+//    private boolean isValidExpirationDate(String expirationDate) {
+//        try {
+//            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
+//            LocalDate.parse("01/" + expirationDate, formatter);
+//            return true;
+//        } catch (DateTimeException e) {
+//            return false;
+//        }
+//    }
+//
+//    public String getPin() {
+//        return pin;
+//    }
+//
+//    public void setPin(String pin) {
+//        this.pin = pin;
+//    }
 
-    public void setCreditCardProvider(CreditCardProvider creditCardProvider) {
-        this.creditCardProvider = creditCardProvider;
-    }
-
-    public String getCardNumber() {
-        return cardNumber;
-    }
-
-    public void setCardNumber(String cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public String getExpirationDate() {
-        return expirationDate;
-    }
-
-    public String getCvc() {
-        return cvc;
-    }
-
-    public void setCvc(String cvc) {
-        this.cvc = cvc;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public CreditCardType getCreditCardType() {
-        return creditCardType;
-    }
-
-    public void setCreditCardType(CreditCardType creditCardType) {
-        this.creditCardType = creditCardType;
-    }
-
-    public void setExpirationDate(String expirationDate) {
-        if (isValidExpirationDate(expirationDate)) {
-            this.expirationDate = expirationDate;
-        } else {
-            throw new IllegalArgumentException("Invalid expiration date format. Please use MM/YY.");
-        }
-    }
-
-    private boolean isValidExpirationDate(String expirationDate) {
-        try {
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/yy");
-            LocalDate.parse("01/" + expirationDate, formatter);
-            return true;
-        } catch (DateTimeException e) {
-            return false;
-        }
-    }
-
-    public String getPin() {
-        return pin;
-    }
-
-    public void setPin(String pin) {
-        this.pin = pin;
-    }
 }

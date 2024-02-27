@@ -12,31 +12,28 @@ public class AdminController {
 
     private AdminService adminService;
 
-    @Autowired //opcjonalne - Spring wie, ze to ma sie dziac automatycznie, ale dla przejrzystosci
+    @Autowired
     public AdminController(AdminService adminService) {
         this.adminService = adminService;
     }
 
     @PostMapping("/create")
     public void createAdmin(@RequestBody AdminDto adminDto) {
-        // TODO: Dodaj odpowiedni kod obsługi dla createAdmin
         adminService.createAdmin(adminDto);
     }
-    @GetMapping("/get")
-    public ResponseEntity<AdminDto> getAdmin(@RequestBody String indexNumber) {
-        // TODO: Dodaj odpowiedni kod obsługi dla getAdmin
-        adminService.getAdmin(indexNumber);
+    @GetMapping("/get/{indexNumber}")
+    public ResponseEntity<AdminDto> getAdmin(@PathVariable String indexNumber) {
+        AdminDto adminDto = adminService.getAdmin(indexNumber);
+        return ResponseEntity.ok(adminDto);
     }
 
-    @PutMapping("/update")
-    public void updateAdmin(@RequestBody String indexNumber, AdminDto adminDto) {
-        // TODO: Dodaj odpowiedni kod obsługi dla updateAdmin
+    @PutMapping("/update/{indexNumber}")
+    public void updateAdmin(@PathVariable String indexNumber, @RequestBody AdminDto adminDto) {
         adminService.updateAdmin(indexNumber, adminDto);
     }
 
     @DeleteMapping("/delete")
-    public void deleteAdmin(@RequestBody String indexNumber) {
-        // TODO: Dodaj odpowiedni kod obsługi dla deleteAdmin
-        adminService.deleteAdmin(indexNumber);
+    public void deleteAdmin(@RequestBody AdminDto adminDto) {
+        adminService.deleteAdmin(adminDto);
     }
 }

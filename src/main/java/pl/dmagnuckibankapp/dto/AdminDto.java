@@ -1,12 +1,12 @@
 package pl.dmagnuckibankapp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
+import java.util.Objects;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter
 @Setter
 public class AdminDto {
@@ -17,5 +17,6 @@ public class AdminDto {
 //    private String email;
 //    private String phoneNumber;
 //    private Permissions permissions;
+
 
 }

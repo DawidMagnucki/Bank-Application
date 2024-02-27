@@ -5,15 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="473276e3-daab-42e1-9ab1-188e39fc130c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AccountRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AdminRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AdminController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/ClientController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AccountDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AdminDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AdminDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/PaymentCard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/PaymentCard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/CurrenciesDB.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/ExchangeRateDB.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +36,8 @@
         <option value="Kotlin Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -47,19 +56,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Bank-App-ConspectCreation&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/IdeaProjects/LibraryProject&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/david/IdeaProjects/LibraryProject",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\david\IdeaProjects\Bank\Bank-App\src\main\java\pl\dmagnuckibankapp" />
@@ -108,13 +117,6 @@
       </list>
     </recent_temporary>
   </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="jdk-19.0.2-corretto-19.0.2-4caba194b151-48ba4555" />
-      </set>
-    </attachedChunks>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -136,5 +138,26 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AccountController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AccountRepository.java</url>
+          <line>7</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

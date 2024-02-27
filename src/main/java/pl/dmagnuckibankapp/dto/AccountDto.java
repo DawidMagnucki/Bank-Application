@@ -1,13 +1,11 @@
 package pl.dmagnuckibankapp.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import pl.dmagnuckibankapp.enums.AccountType;
 
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Getter
 @Setter
 public class AccountDto {

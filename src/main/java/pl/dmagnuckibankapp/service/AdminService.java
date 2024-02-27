@@ -7,5 +7,5 @@ public interface AdminService {
     void createAdmin (AdminDto adminDto);
     AdminDto getAdmin(String indexNumber);
     void updateAdmin(String indexNumber, AdminDto adminDto);
-    void deleteAdmin(String indexNumber);
+    void deleteAdmin(AdminDto adminDto);
 }
