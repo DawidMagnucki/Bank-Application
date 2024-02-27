@@ -6,12 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.List;
-
 @Entity
 @Data
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 public class Account {
 
     @Id
@@ -27,9 +26,6 @@ public class Account {
         this.id = id;
         this.accountNumber = accountNumber;
         this.accountName = accountName;
-    }
-
-    public Account() {
     }
 
 }

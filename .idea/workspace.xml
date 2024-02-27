@@ -5,27 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="473276e3-daab-42e1-9ab1-188e39fc130c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/ClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/ClientController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/ClientController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AdminDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AdminDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/ClientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/ClientDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Admin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transaction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AdminRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/ClientRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionHistory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,13 +144,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java</url>
-          <line>33</line>
+          <line>27</line>
           <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AccountRepository.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

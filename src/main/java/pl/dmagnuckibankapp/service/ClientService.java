@@ -7,5 +7,4 @@ public interface ClientService {
     ClientDto getClient(String indexNumber);
     void updateClient(ClientDto clientDto, String indexNumber);
     void deleteClient(ClientDto clientDto);
-
 }

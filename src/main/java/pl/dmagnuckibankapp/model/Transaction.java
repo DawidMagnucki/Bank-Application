@@ -3,7 +3,6 @@ package pl.dmagnuckibankapp.model;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import lombok.*;
 
 import java.util.List;
@@ -21,7 +20,7 @@ public class Transaction {
     private double amount;
 
     @ManyToMany
-    private List <Account> accounts;
+    private List<Account> accounts;
 
 
 }

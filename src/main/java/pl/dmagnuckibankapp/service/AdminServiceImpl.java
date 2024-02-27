@@ -10,12 +10,10 @@ import pl.dmagnuckibankapp.repository.AdminRepository;
 public class AdminServiceImpl implements AdminService {
 
     private AdminRepository adminRepository;
-
     @Autowired
     public AdminServiceImpl(AdminRepository adminRepository) {
         this.adminRepository = adminRepository;
     }
-
     @Override
     public void createAdmin(AdminDto adminDto) {
         Admin admin = Admin.builder()
@@ -25,13 +23,15 @@ public class AdminServiceImpl implements AdminService {
                 .build();
         adminRepository.save(admin);
     }
-
     @Override
     public AdminDto getAdmin(String indexNumber) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);
-        return AdminDto.builder().username(admin.getUsername()).password(admin.getPassword()).indexNumber(admin.getIndexNumber()).build();
+        return AdminDto.builder()
+                .username(admin.getUsername())
+                .password(admin.getPassword())
+                .indexNumber(admin.getIndexNumber())
+                .build();
     }
-
     @Override
     public void updateAdmin(String indexNumber, AdminDto adminDto) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);
@@ -39,7 +39,6 @@ public class AdminServiceImpl implements AdminService {
         admin.setPassword(admin.getPassword());
         adminRepository.save(admin);
     }
-
     @Override
     public void deleteAdmin(AdminDto adminDto) {
         Admin admin = adminRepository.findByIndexNumber(adminDto.getIndexNumber());
