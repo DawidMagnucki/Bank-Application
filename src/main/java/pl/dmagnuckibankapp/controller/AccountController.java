@@ -10,7 +10,7 @@ import pl.dmagnuckibankapp.service.AccountService;
 @RestController
 public class AccountController {
 
-    private AccountService accountService;
+    private final AccountService accountService;
 
     @Autowired
     public AccountController(AccountService accountService) {
@@ -21,15 +21,18 @@ public class AccountController {
     public void createAccount(@RequestBody AccountDto accountDto) {
         accountService.createAccount(accountDto);
     }
+
     @GetMapping("/get/{accountNumber}")
     public ResponseEntity<AccountDto> getAccount(@PathVariable String accountNumber) {
         AccountDto accountDto = accountService.getAccount(accountNumber);
         return ResponseEntity.ok(accountDto);
     }
+
     @PutMapping("/update/{accountNumber}")
     public void updateAccount(@RequestBody AccountDto accountDto, @PathVariable String accountNumber) {
-        accountService.updateAccount(accountDto,accountNumber);
+        accountService.updateAccount(accountDto, accountNumber);
     }
+
     @DeleteMapping("/delete")
     public void deleteAccount(@RequestBody AccountDto accountDto) {
         accountService.deleteAccount(accountDto);

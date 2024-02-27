@@ -20,16 +20,10 @@ public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private String fullName;
-    private String idCard;
-//    private LocalDate dateOfBirth;
-//    private String email;
-//    private String phoneNumber;
-//    private String residentialAddress;
-//    private EmploymentStatus employmentStatus;
-//    private String occupation;
-//    private double annualIncome;
-//    private Permissions permissions;
+    private Long id;
+    private String name;
+    private String phoneNumber;
+    private String indexNumber;
 
 }
 

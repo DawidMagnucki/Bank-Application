@@ -1,23 +1,27 @@
 package pl.dmagnuckibankapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Data
 @Builder
+@AllArgsConstructor
 public class Account {
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String accountNumber;
     private String accountName;
+
+    @ManyToOne
+    private Client client;
 
     public Account(Long id, String accountNumber, String accountName) {
         this.id = id;
@@ -27,15 +31,5 @@ public class Account {
 
     public Account() {
     }
-//    private AccountType accountType;
-//    private double balance;
-//    private Client client;
-//    private Currency currency;
-//    private AccountStatus status;
-//    private Date dateOfCreation;
-//    private TransactionHistory transactionHistory;
-//    private double creditLimit;
-//    private String linkedCards;
-//    private double transactionLimits;
 
 }

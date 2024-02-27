@@ -29,12 +29,9 @@ public class AdminServiceImpl implements AdminService {
     @Override
     public AdminDto getAdmin(String indexNumber) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);
-        return AdminDto.builder()
-                .username(admin.getUsername())
-                .password(admin.getPassword())
-                .indexNumber(admin.getIndexNumber())
-                .build();
+        return AdminDto.builder().username(admin.getUsername()).password(admin.getPassword()).indexNumber(admin.getIndexNumber()).build();
     }
+
     @Override
     public void updateAdmin(String indexNumber, AdminDto adminDto) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);
@@ -42,6 +39,7 @@ public class AdminServiceImpl implements AdminService {
         admin.setPassword(admin.getPassword());
         adminRepository.save(admin);
     }
+
     @Override
     public void deleteAdmin(AdminDto adminDto) {
         Admin admin = adminRepository.findByIndexNumber(adminDto.getIndexNumber());

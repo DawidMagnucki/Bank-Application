@@ -10,7 +10,7 @@ import pl.dmagnuckibankapp.service.AdminService;
 @RestController
 public class AdminController {
 
-    private AdminService adminService;
+    private final AdminService adminService;
 
     @Autowired
     public AdminController(AdminService adminService) {
@@ -21,6 +21,7 @@ public class AdminController {
     public void createAdmin(@RequestBody AdminDto adminDto) {
         adminService.createAdmin(adminDto);
     }
+
     @GetMapping("/get/{indexNumber}")
     public ResponseEntity<AdminDto> getAdmin(@PathVariable String indexNumber) {
         AdminDto adminDto = adminService.getAdmin(indexNumber);

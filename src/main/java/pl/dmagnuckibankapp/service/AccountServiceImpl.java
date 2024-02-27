@@ -7,9 +7,9 @@ import pl.dmagnuckibankapp.model.Account;
 import pl.dmagnuckibankapp.repository.AccountRepository;
 
 @Service
-public class AccountServiceImpl implements AccountService{
+public class AccountServiceImpl implements AccountService {
 
-    private AccountRepository accountRepository;
+    private final AccountRepository accountRepository;
 
     @Autowired
     public AccountServiceImpl(AccountRepository accountRepository) {
@@ -19,20 +19,14 @@ public class AccountServiceImpl implements AccountService{
 
     @Override
     public void createAccount(AccountDto accountDto) {
-        Account account = Account.builder()
-                .accountName(accountDto.getAccountName())
-                .accountNumber(accountDto.getAccountNumber())
-                .build();
+        Account account = Account.builder().accountName(accountDto.getAccountName()).accountNumber(accountDto.getAccountNumber()).build();
         accountRepository.save(account);
     }
 
     @Override
     public AccountDto getAccount(String accountNumber) {
         Account account = accountRepository.findByAccountNumber(accountNumber);
-        return AccountDto.builder()
-                .accountName(account.getAccountName())
-                .accountNumber(account.getAccountNumber())
-                .build();
+        return AccountDto.builder().accountName(account.getAccountName()).accountNumber(account.getAccountNumber()).build();
     }
 
     @Override

@@ -9,7 +9,7 @@ import pl.dmagnuckibankapp.service.ClientService;
 @RequestMapping("/client")
 @RestController
 public class ClientController {
-    private ClientService clientService;
+    private final ClientService clientService;
 
     @Autowired
     public ClientController(ClientService clientService) {
@@ -18,26 +18,22 @@ public class ClientController {
 
     @PostMapping("/create")
     public void createClient(@RequestBody ClientDto clientDto) {
-        // TODO: Dodaj odpowiedni kod obsługi dla createClient
         clientService.createClient(clientDto);
     }
 
-    @GetMapping("/get")
-    public ResponseEntity<ClientDto> getClient(@RequestBody String idCard) {
-        // TODO: Dodaj odpowiedni kod obsługi dla getClient
-        ClientDto clientDto = clientService.getClient(idCard);
+    @GetMapping("/get/{indexNumber}")
+    public ResponseEntity<ClientDto> getClient(@PathVariable String indexNumber) {
+        ClientDto clientDto = clientService.getClient(indexNumber);
         return ResponseEntity.ok(clientDto);
     }
 
-    @PutMapping("/update")
-    public void updateClient(@RequestBody String idCard) {
-        // TODO: Dodaj odpowiedni kod obsługi dla updateClient
-        clientService.updateClient(idCard);
+    @PutMapping("/update/{indexNumber}")
+    public void updateClient(@RequestBody ClientDto clientDto, @PathVariable String indexNumber) {
+        clientService.updateClient(clientDto, indexNumber);
     }
 
     @DeleteMapping("/delete")
     public void deleteClient(@RequestBody ClientDto clientDto) {
-        // TODO: Dodaj odpowiedni kod obsługi dla deleteClient
         clientService.deleteClient(clientDto);
     }
 }
