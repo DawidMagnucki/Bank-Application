@@ -5,19 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="473276e3-daab-42e1-9ab1-188e39fc130c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Address.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AccountRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/AccountRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/ClientRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/ClientRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/ClientServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionHistory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +21,8 @@
         <option value="Kotlin Enum" />
         <option value="JUnit5 Test Class" />
         <option value="Enum" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>

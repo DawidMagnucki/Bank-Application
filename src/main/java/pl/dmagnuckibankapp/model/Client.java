@@ -25,6 +25,9 @@ public class Client {
     @OneToMany
     private Account account;
 
+    @OneToOne
+    private Address address;
+
 }
 
 
