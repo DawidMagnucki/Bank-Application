@@ -1,10 +1,8 @@
 package pl.dmagnuckibankapp.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+import pl.dmagnuckibankapp.dto.AddressDto;
 
 @Entity
 @NoArgsConstructor
@@ -19,6 +17,18 @@ public class Address {
     private Long id;
 
     private String street;
-    private String houseNumber;
+    private String city;
+    private String zipCode;
 
+    @OneToOne(mappedBy = "address", cascade = CascadeType.ALL)
+    private Client client;
+
+    public AddressDto toDto() {
+        return AddressDto.builder()
+                .street(street)
+                .city(city)
+                .zipCode(zipCode)
+                .build();
+
+    }
 }

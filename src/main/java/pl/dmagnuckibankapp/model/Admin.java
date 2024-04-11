@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.*;
+import pl.dmagnuckibankapp.dto.AdminDto;
 import pl.dmagnuckibankapp.enums.Permissions;
 
 @Entity
@@ -22,4 +23,11 @@ public class Admin {
     private String password;
     private String indexNumber;
 
+    public AdminDto toDto(){
+        return AdminDto.builder()
+                .username(username)
+                .password(password)
+                .indexNumber(indexNumber)
+                .build();
+    }
 }

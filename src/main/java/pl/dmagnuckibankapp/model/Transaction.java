@@ -2,14 +2,19 @@ package pl.dmagnuckibankapp.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import lombok.*;
+import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import pl.dmagnuckibankapp.dto.TransactionDto;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -17,10 +22,17 @@ public class Transaction {
 
     @Id
     private Long id;
-    private double amount;
+    private LocalDateTime timestamp;
+    private BigDecimal amount;
 
-    @ManyToMany
+
+    @ManyToOne
     private List<Account> accounts;
 
-
+    public TransactionDto toDto() {
+        return TransactionDto.builder()
+                .timestamp(timestamp)
+                .amount(amount)
+                .build();
+    }
 }

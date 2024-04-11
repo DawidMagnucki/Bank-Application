@@ -6,6 +6,8 @@ import pl.dmagnuckibankapp.dto.AdminDto;
 import pl.dmagnuckibankapp.model.Admin;
 import pl.dmagnuckibankapp.repository.AdminRepository;
 
+import java.util.List;
+
 @Service
 public class AdminServiceImpl implements AdminService {
 
@@ -32,6 +34,15 @@ public class AdminServiceImpl implements AdminService {
                 .indexNumber(admin.getIndexNumber())
                 .build();
     }
+
+    @Override
+    public List<AdminDto> getAllAdmins() {
+        return adminRepository.findAll()
+                .stream()
+                .map(Admin::toDto)
+                .toList();
+    }
+
     @Override
     public void updateAdmin(String indexNumber, AdminDto adminDto) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);

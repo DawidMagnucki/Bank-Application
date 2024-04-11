@@ -3,7 +3,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
            http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="xmlBeanTest" class="pl.kursspring.bank.beans.XMLBean">
+    <bean id="xmlBeanTest" class="pl.dmagnuckibankapp.bank.beans.XMLBean">
         <property name="name" value="It's XML configuration!"/>
     </bean>
 

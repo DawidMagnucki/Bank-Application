@@ -7,4 +7,8 @@ import pl.dmagnuckibankapp.model.Account;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long> {
     Account findByAccountNumber(String accountNumber);
+
+    void deleteByAccountNumber(String accountRepository);
+
+    boolean existsByAccountNumber(String accountNumber);
 }
