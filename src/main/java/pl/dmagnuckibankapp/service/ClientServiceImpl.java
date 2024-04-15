@@ -6,6 +6,8 @@ import pl.dmagnuckibankapp.dto.ClientDto;
 import pl.dmagnuckibankapp.model.Client;
 import pl.dmagnuckibankapp.repository.ClientRepository;
 
+import java.util.List;
+
 @Service
 public class ClientServiceImpl implements ClientService {
     private final ClientRepository clientRepository;
@@ -14,14 +16,22 @@ public class ClientServiceImpl implements ClientService {
         this.clientRepository = clientRepository;
     }
     @Override
-    public void createClient(ClientDto clientDto) {
+    public ClientDto create(ClientDto clientDto) {
         Client client = Client.builder()
                 .name(clientDto.getName())
                 .phoneNumber(clientDto.getPhoneNumber())
                 .indexNumber(clientDto.getIndexNumber())
                 .build();
-        clientRepository.save(client);
+        return clientRepository.save(client).toDto();
     }
+    @Override
+    public List<ClientDto> getAll() {
+        return clientRepository.findAll()
+                .stream()
+                .map(Client::toDto)
+                .toList();
+    }
+
     @Override
     public ClientDto getClient(String indexNumber) {
         Client client = clientRepository.findByIndexNumber(indexNumber);
@@ -31,14 +41,17 @@ public class ClientServiceImpl implements ClientService {
                 .build();
     }
     @Override
-    public void updateClient(ClientDto clientDto, String indexNumber) {
+    public ClientDto update(ClientDto clientDto, String indexNumber) {
         Client client = clientRepository.findByIndexNumber(clientDto.getIndexNumber());
         client.setPhoneNumber(clientDto.getPhoneNumber());
-        clientRepository.save(client);
+        return clientRepository.save(client).toDto();
     }
     @Override
-    public void deleteClient(ClientDto clientDto) {
-        Client client = clientRepository.findByIndexNumber(clientDto.getIndexNumber());
-        clientRepository.delete(client);
+    public boolean delete(String indexNumber) {
+        if (clientRepository.existsByIndexNumber(indexNumber)){
+            clientRepository.deleteByIndexNumber(indexNumber);
+            return true;
+        }
+        return false;
     }
 }

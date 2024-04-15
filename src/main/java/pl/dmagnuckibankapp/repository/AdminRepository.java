@@ -7,4 +7,8 @@ import pl.dmagnuckibankapp.model.Admin;
 @Repository
 public interface AdminRepository extends JpaRepository<Admin, Long> {
     Admin findByIndexNumber(String indexNumber);
+
+    boolean existsByIndexNumber(String indexNumber);
+
+    void deleteByIndexNumber(String indexNumber);
 }

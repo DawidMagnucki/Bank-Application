@@ -26,6 +26,13 @@ public class AdminServiceImpl implements AdminService {
        return adminRepository.save(admin).toDto();
     }
     @Override
+    public List<AdminDto> getAllAdmins() {
+        return adminRepository.findAll()
+                .stream()
+                .map(Admin::toDto)
+                .toList();
+    }
+    @Override
     public AdminDto getAdmin(String indexNumber) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);
         return AdminDto.builder()
@@ -34,15 +41,6 @@ public class AdminServiceImpl implements AdminService {
                 .indexNumber(admin.getIndexNumber())
                 .build();
     }
-
-    @Override
-    public List<AdminDto> getAllAdmins() {
-        return adminRepository.findAll()
-                .stream()
-                .map(Admin::toDto)
-                .toList();
-    }
-
     @Override
     public AdminDto update(String indexNumber, AdminDto adminDto) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);
@@ -52,11 +50,10 @@ public class AdminServiceImpl implements AdminService {
     }
     @Override
     public boolean delete(String indexNumber) {
-        if (adminRepository.existsByIndexNumber(indexNumber)){ //TODO: Dopisać metodę
-            adminRepository.deleteByIndexNumber(indexNumber); //TODO: Dopisać metodę
+        if (adminRepository.existsByIndexNumber(indexNumber)){
+            adminRepository.deleteByIndexNumber(indexNumber);
             return true;
         }
         return false;
-
     }
 }

@@ -18,7 +18,7 @@ public class ClientController {
 
     @PostMapping("/create")
     public void createClient(@RequestBody ClientDto clientDto) {
-        clientService.createClient(clientDto);
+        clientService.create(clientDto);
     }
 
     @GetMapping("/get/{indexNumber}")
@@ -29,11 +29,11 @@ public class ClientController {
 
     @PutMapping("/update/{indexNumber}")
     public void updateClient(@RequestBody ClientDto clientDto, @PathVariable String indexNumber) {
-        clientService.updateClient(clientDto, indexNumber);
+        clientService.update(clientDto, indexNumber);
     }
 
     @DeleteMapping("/delete")
-    public void deleteClient(@RequestBody ClientDto clientDto) {
-        clientService.deleteClient(clientDto);
+    public void deleteClient(@RequestBody String indexNumber) {
+        clientService.delete(indexNumber);
     }
 }

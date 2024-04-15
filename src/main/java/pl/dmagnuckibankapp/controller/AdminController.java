@@ -44,7 +44,7 @@ public class AdminController {
     }
 
     @DeleteMapping("/delete")
-    public void deleteAdmin(@RequestBody AdminDto adminDto) {
-        adminService.delete(adminDto);
+    public void deleteAdmin(@RequestBody String indexNumber) {
+        adminService.delete(indexNumber);
     }
 }
