@@ -17,13 +17,13 @@ public class AdminServiceImpl implements AdminService {
         this.adminRepository = adminRepository;
     }
     @Override
-    public void createAdmin(AdminDto adminDto) {
+    public AdminDto create(AdminDto adminDto) {
         Admin admin = Admin.builder()
                 .username(adminDto.getUsername())
                 .password(adminDto.getPassword())
                 .indexNumber(adminDto.getIndexNumber())
                 .build();
-        adminRepository.save(admin);
+       return adminRepository.save(admin).toDto();
     }
     @Override
     public AdminDto getAdmin(String indexNumber) {
@@ -44,15 +44,19 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void updateAdmin(String indexNumber, AdminDto adminDto) {
+    public AdminDto update(String indexNumber, AdminDto adminDto) {
         Admin admin = adminRepository.findByIndexNumber(indexNumber);
         admin.setUsername(adminDto.getUsername());
         admin.setPassword(admin.getPassword());
-        adminRepository.save(admin);
+        return adminRepository.save(admin).toDto();
     }
     @Override
-    public void deleteAdmin(AdminDto adminDto) {
-        Admin admin = adminRepository.findByIndexNumber(adminDto.getIndexNumber());
-        adminRepository.delete(admin);
+    public boolean delete(String indexNumber) {
+        if (adminRepository.existsByIndexNumber(indexNumber)){ //TODO: Dopisać metodę
+            adminRepository.deleteByIndexNumber(indexNumber); //TODO: Dopisać metodę
+            return true;
+        }
+        return false;
+
     }
 }

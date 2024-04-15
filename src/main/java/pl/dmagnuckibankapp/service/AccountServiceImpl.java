@@ -9,7 +9,6 @@ import pl.dmagnuckibankapp.model.Account;
 import pl.dmagnuckibankapp.repository.AccountRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class AccountServiceImpl implements AccountService {
