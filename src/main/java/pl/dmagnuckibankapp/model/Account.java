@@ -24,6 +24,7 @@ public class Account {
     private BigDecimal balance;
     private String accountName;
     private AccountType accountType;
+    @OneToMany
     private List<Transaction> transactions;
 
     @ManyToOne(cascade = CascadeType.ALL)

@@ -22,8 +22,8 @@ public class AdminController {
     }
 
     @PostMapping("/create")
-    public void createAdmin(@RequestBody AdminDto adminDto) {
-        adminService.createAdmin(adminDto);
+    public AdminDto create(@RequestBody AdminDto adminDto) {
+        return adminService.create(adminDto);
     }
 
     @GetMapping("/get/{indexNumber}")
@@ -40,7 +40,7 @@ public class AdminController {
 
     @PutMapping("/update/{indexNumber}")
     public void updateAdmin(@PathVariable String indexNumber, @RequestBody AdminDto adminDto) {
-        adminService.updateAdmin(indexNumber, adminDto);
+        adminService.update(indexNumber, adminDto);
     }
 
     @DeleteMapping("/delete")
