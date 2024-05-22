@@ -38,15 +38,15 @@ public class Account {
     }
 
     public AccountDto toDto() {
-        List<TransactionDto> transactionDtos = new ArrayList<>();
-        for (Transaction transaction : transactions) {
-            transactionDtos.add(transaction.toDto());
-        }
+//        List<TransactionDto> transactionDtos = new ArrayList<>();
+//        for (Transaction transaction : transactions) {
+//            transactionDtos.add(transaction.toDto());
+//        }
         return AccountDto.builder()
                 .accountNumber(accountNumber)
                 .balance(balance)
                 .clientDto(client.toDto())
-                .transactionDtos(transactionDtos)
+//                .transactionDtos(transactionDtos)
                 .build();
     }
 }

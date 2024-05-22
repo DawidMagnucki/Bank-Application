@@ -23,18 +23,18 @@ public class AccountDto {
     private String accountName;
     private AccountType accountType;
     private ClientDto clientDto;
-    private List<TransactionDto> transactionDtos;
+ //   private List<TransactionDto> transactionDtos;
 
     public Account toEntity() {
-        List<Transaction> transactions = new ArrayList<>();
-        for (TransactionDto transaction : transactionDtos) {
-            transactions.add(transaction.toEntity());
-        }
+//        List<Transaction> transactions = new ArrayList<>();
+//        for (TransactionDto transaction : transactionDtos) {
+//            transactions.add(transaction.toEntity());
+//        }
         return Account.builder()
                 .accountNumber(accountNumber)
                 .balance(balance)
                 .client(clientDto.toEntity())
-                .transactions(transactions)
+//                .transactions(transactions)
                 .build();
     }
 

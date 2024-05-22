@@ -36,7 +36,7 @@ public class Client {
                 .name(name)
                 .phoneNumber(phoneNumber)
                 .indexNumber(indexNumber)
-                .addressDto(address.toDto())
+//                .addressDto(address.toDto())
                 .build();
     }
 

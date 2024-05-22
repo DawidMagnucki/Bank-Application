@@ -23,7 +23,7 @@ public class ClientDto {
                 .name(name)
                 .phoneNumber(phoneNumber)
                 .indexNumber(indexNumber)
-                .address(addressDto.toEntity())
+//                .address(addressDto.toEntity())
                 .build();
 
     }
