@@ -28,13 +28,33 @@ public class CurrencyController {
         return frankfurterConnection.getRatesToSpecifiedCurrencies(currencies);
     }
 
-    @GetMapping("/{date}")
+    @GetMapping("/historical/{date}")
     public String getHistoricalRates(@PathVariable String date) {
         return frankfurterConnection.getHistoricalRates(date);
     }
 
-    @GetMapping("/currencies")
+    @GetMapping("/historical/{startPeriod}/{endPeriod}")
+    public String getHistoricalRatesForGivenPeriod(@PathVariable String startPeriod, @PathVariable String endPeriod) {
+        return frankfurterConnection.getHistoricalRatesForGivenPeriod(startPeriod, endPeriod);
+    }
+
+    @GetMapping("/historical/{startPeriod}/to-today")
+    public String getHistoricalRatesUpToToday(@PathVariable String startPeriod) {
+        return frankfurterConnection.getHistoricalRatesUpToToday(startPeriod);
+    }
+
+    @GetMapping(value = "/historical/{startPeriod}", params = "to")
+    public String getHistoricalRatesUpToTodayWithSpecificCurrency(@PathVariable String startPeriod, @RequestParam("to") String currency) {
+        return frankfurterConnection.getHistoricalRatesUpToTodayWithSpecificCurrency(startPeriod, currency);
+    }
+
+    @GetMapping("/convert")
+    public String convertCurrency(@RequestParam("amount") double amount, @RequestParam("from") String fromCurrency, @RequestParam("to") String toCurrency) {
+        return frankfurterConnection.convertCurrency(amount, fromCurrency, toCurrency);
+    }
+
+    @GetMapping ("/all")
     public String getCurrencies() {
-        return frankfurterConnection.getLatest();
+        return frankfurterConnection.getCurrenciesList();
     }
 }

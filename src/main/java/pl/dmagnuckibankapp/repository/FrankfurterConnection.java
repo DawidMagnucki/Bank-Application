@@ -1,6 +1,7 @@
 package pl.dmagnuckibankapp.repository;
 
 import org.springframework.web.client.RestClient;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -35,6 +36,7 @@ public class FrankfurterConnection {
                 .retrieve()
                 .body(String.class);
     }
+
     private String formatCurrencies(String currencies) {
         String[] currencyArray = currencies.split(",");
         StringBuilder formattedCurrencies = new StringBuilder();
@@ -51,10 +53,11 @@ public class FrankfurterConnection {
         }
         return formattedCurrencies.toString();
     }
+
     private boolean isValidCurrency(String currency) {
-        // Simple validation: Check if the currency code is 3 characters long
         return currency.length() == 3;
     }
+
     public String getHistoricalRates(String date) {
         RestClient restClient = RestClient.create();
         if (!isDate(date)) {
@@ -74,6 +77,68 @@ public class FrankfurterConnection {
             return false;
         }
     }
+
+    public String getHistoricalRatesForGivenPeriod(String startPeriod, String endPeriod) {
+        RestClient restClient = RestClient.create();
+        if (!isDate(startPeriod) || !isDate(endPeriod)) {
+            throw new RuntimeException("Invalid date format. Please use following format: YYYY-MM-DD, e.g. 2000-05-15");
+        }
+        return restClient.get()
+                .uri("https://api.frankfurter.app/" + startPeriod + ".." + endPeriod)
+                .retrieve()
+                .body(String.class);
+    }
+
+    public String getHistoricalRatesUpToToday(String startPeriod) {
+        RestClient restClient = RestClient.create();
+        if (!isDate(startPeriod)) {
+            throw new RuntimeException("Invalid date format. Please use following format: YYYY-MM-DD, e.g. 2000-05-15");
+        }
+        return restClient.get()
+                .uri("https://api.frankfurter.app/" + startPeriod + "..")
+                .retrieve()
+                .body(String.class);
+    }
+
+    public String getHistoricalRatesUpToTodayWithSpecificCurrency(String startPeriod, String currency) {
+        RestClient restClient = RestClient.create();
+        if (!isDate(startPeriod)) {
+            throw new RuntimeException("Invalid date format. Please use following format: YYYY-MM-DD, e.g. 2000-05-15");
+        } else {
+            if (!isValidCurrency(currency)) {
+                throw new RuntimeException("Invalid currency format. Please enter 3 letter format, e.g. EUR");
+            }
+            return restClient.get()
+                    .uri("https://api.frankfurter.app/" + startPeriod + "..?to=" + currency)
+                    .retrieve()
+                    .body(String.class);
+        }
+    }
+
+    public String convertCurrency(double amount, String fromCurrency, String toCurrency) {
+        RestClient restClient = RestClient.create();
+        String url = UriComponentsBuilder.fromHttpUrl("https://api.frankfurter.app/latest")
+                .queryParam("amount", amount)
+                .queryParam("from", fromCurrency)
+                .queryParam("to", toCurrency)
+                .toUriString();
+
+        return restClient.get()
+                .uri(url)
+                .retrieve()
+                .body(String.class);
+    }
+
+    public String getCurrenciesList() {
+        RestClient restClient = RestClient.create();
+        return restClient.get()
+                .uri("https://api.frankfurter.app/currencies")
+                .retrieve()
+                .body(String.class);
+    }
+
+
 }
+
 
 
