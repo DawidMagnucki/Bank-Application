@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="473276e3-daab-42e1-9ab1-188e39fc130c" name="Changes" comment="wip">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/CurrencyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/CurrencyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AccountDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AccountDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/ClientDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/ClientDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/FrankfurterConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/FrankfurterConnection.java" afterDir="false" />
-    </list>
+    <list default="true" id="473276e3-daab-42e1-9ab1-188e39fc130c" name="Changes" comment="wip" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -132,7 +122,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712855463912</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="wip">
+      <option name="closed" value="true" />
+      <created>1716394450761</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716394450761</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -186,11 +184,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/AccountDto.java</url>
           <line>35</line>
           <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Account.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
