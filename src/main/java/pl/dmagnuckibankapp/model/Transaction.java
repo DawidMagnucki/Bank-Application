@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import pl.dmagnuckibankapp.dto.AccountDto;
 import pl.dmagnuckibankapp.dto.TransactionDto;
 
 import java.math.BigDecimal;
@@ -20,16 +21,19 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private LocalDateTime timestamp;
+    private String transactionId;
     private BigDecimal amount;
-
-
     @ManyToOne
-    private Account account;
+    @JoinColumn(name = "recipient_id")
+    private Account recipient;
+    @ManyToOne
+    @JoinColumn(name = "sender_id")
+    private Account sender;
+    private String title;
 
     public TransactionDto toDto() {
         return TransactionDto.builder()
-                .timestamp(timestamp)
+                .transactionId(transactionId)
                 .amount(amount)
                 .build();
     }

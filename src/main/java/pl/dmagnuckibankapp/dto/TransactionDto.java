@@ -1,23 +1,31 @@
 package pl.dmagnuckibankapp.dto;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import pl.dmagnuckibankapp.model.Transaction;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 public class TransactionDto {
 
-    private LocalDateTime timestamp;
+    private String transactionId;
     private BigDecimal amount;
+    private AccountDto recipient;
+    private AccountDto sender;
+    private String title;
 
     public Transaction toEntity() {
         return Transaction.builder()
-                .timestamp(timestamp)
+                .transactionId(transactionId)
                 .amount(amount)
+                .recipient (recipient.toEntity())
+                .sender (sender.toEntity())
+                .title (title)
                 .build();
     }
 }
