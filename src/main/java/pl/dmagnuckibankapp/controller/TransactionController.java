@@ -21,8 +21,9 @@ public class TransactionController {
     }
 
     @PostMapping ("/create")
-    public String create (@RequestBody TransactionDto transactionDto){
-        return String.valueOf(transactionDto);
+    public ResponseEntity<TransactionDto> create (@RequestBody TransactionDto transactionDto){
+        TransactionDto savedTransaction = transactionService.create(transactionDto);
+        return ResponseEntity.ok(savedTransaction);
     }
 
     @GetMapping ("/retrieve/{transactionId}")

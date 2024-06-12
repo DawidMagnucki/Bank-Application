@@ -20,10 +20,10 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public TransactionDto create(TransactionDto transactionDto) {
         Transaction transaction = Transaction.builder()
-                .transactionId(transactionDto.getTransactionId())
+
                 .amount(transactionDto.getAmount())
-                .recipient(transactionDto.getRecipient().toEntity())
-                .sender(transactionDto.getSender().toEntity())
+                .recipient(transactionDto.getRecipient())
+                .sender(transactionDto.getSender())
                 .title(transactionDto.getTitle())
                 .build();
         return transactionRepository.save(transaction).toDto();
@@ -33,10 +33,9 @@ public class TransactionServiceImpl implements TransactionService {
     public TransactionDto retrieve(String transactionId) {
         Transaction transaction = transactionRepository.findByTransactionId(transactionId);
                 return TransactionDto.builder()
-                .transactionId(transaction.getTransactionId())
                 .amount(transaction.getAmount())
-                .recipient(transaction.getRecipient().toDto())
-                .sender(transaction.getSender().toDto())
+                .recipient(transaction.getRecipient())
+                .sender(transaction.getSender())
                 .title(transaction.getTitle())
                 .build();
     }
@@ -53,10 +52,9 @@ public class TransactionServiceImpl implements TransactionService {
     @Override
     public TransactionDto update(String transactionId, TransactionDto transactionDto) {
         Transaction transaction = transactionRepository.findByTransactionId(transactionId);
-        transaction.setTransactionId(transactionDto.getTransactionId());
         transaction.setAmount(transactionDto.getAmount());
-        transaction.setRecipient(transactionDto.getRecipient().toEntity());
-        transaction.setSender(transactionDto.getSender().toEntity());
+        transaction.setRecipient(transactionDto.getRecipient());
+        transaction.setSender(transactionDto.getSender());
         transaction.setTitle(transactionDto.getTitle());
 
         return transactionRepository.save(transaction).toDto();

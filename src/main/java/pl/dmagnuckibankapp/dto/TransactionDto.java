@@ -15,16 +15,15 @@ public class TransactionDto {
 
     private String transactionId;
     private BigDecimal amount;
-    private AccountDto recipient;
-    private AccountDto sender;
+    private String recipient;
+    private String sender;
     private String title;
 
     public Transaction toEntity() {
         return Transaction.builder()
-                .transactionId(transactionId)
                 .amount(amount)
-                .recipient (recipient.toEntity())
-                .sender (sender.toEntity())
+                .recipient (recipient)
+                .sender (sender)
                 .title (title)
                 .build();
     }

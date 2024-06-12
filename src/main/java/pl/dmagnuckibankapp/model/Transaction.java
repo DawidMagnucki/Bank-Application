@@ -21,20 +21,17 @@ public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String transactionId;
     private BigDecimal amount;
-    @ManyToOne
-    @JoinColumn(name = "recipient_id")
-    private Account recipient;
-    @ManyToOne
-    @JoinColumn(name = "sender_id")
-    private Account sender;
+    private String recipient;
+    private String sender;
     private String title;
 
     public TransactionDto toDto() {
         return TransactionDto.builder()
-                .transactionId(transactionId)
                 .amount(amount)
+                .recipient(recipient)
+                .sender(sender)
+                .title(title)
                 .build();
     }
 }

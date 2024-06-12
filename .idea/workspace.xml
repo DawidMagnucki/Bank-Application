@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="473276e3-daab-42e1-9ab1-188e39fc130c" name="Changes" comment="wip">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/TransactionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/TransactionRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AccountOperationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/TransactionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/TransactionDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/dto/TransactionDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/service/TransactionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,22 +44,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
-    &quot;DELOMBOK_PRE_COMMIT&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;CurrenciesFrontendConnection&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/david/IdeaProjects/LibraryProject&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "DELOMBOK_PRE_COMMIT": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "CurrenciesFrontendConnection",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/david/IdeaProjects/LibraryProject",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="pl.dmagnuckibankapp.service" />
@@ -207,6 +204,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/repository/FrankfurterConnection.java</url>
           <line>81</line>
           <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pl/dmagnuckibankapp/controller/TransactionController.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
