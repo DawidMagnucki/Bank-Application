@@ -13,7 +13,6 @@ import java.math.BigDecimal;
 @Data
 public class TransactionDto {
 
-    private String transactionId;
     private BigDecimal amount;
     private String recipient;
     private String sender;

@@ -26,9 +26,9 @@ public class TransactionController {
         return ResponseEntity.ok(savedTransaction);
     }
 
-    @GetMapping ("/retrieve/{transactionId}")
-    public ResponseEntity<TransactionDto> retrieve (@PathVariable String transactionId){
-        TransactionDto transactionDto = transactionService.retrieve(transactionId);
+    @GetMapping ("/retrieve/{id}")
+    public ResponseEntity<TransactionDto> retrieve (@PathVariable String id){
+        TransactionDto transactionDto = transactionService.retrieve(id);
         return ResponseEntity.ok(transactionDto);
     }
 
@@ -38,14 +38,14 @@ public class TransactionController {
         return ResponseEntity.ok(transactionDtos);
     }
 
-    @PutMapping("/update/{transactionId}")
-    public void update (@RequestBody TransactionDto transactionDto, @PathVariable String transactionId){
-        transactionService.update(transactionId, transactionDto);
+    @PutMapping("/update/{id}")
+    public void update (@RequestBody TransactionDto transactionDto, @PathVariable String id){
+        transactionService.update(id, transactionDto);
     }
 
     @DeleteMapping("/delete")
-    public void delete (@RequestBody TransactionDto transactionDto){
-        transactionService.delete(transactionDto.getTransactionId());
+    public void delete (@RequestBody String id){
+        transactionService.delete(id);
     }
 
 }

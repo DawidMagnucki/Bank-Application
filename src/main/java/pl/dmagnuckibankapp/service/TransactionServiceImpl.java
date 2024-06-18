@@ -33,8 +33,8 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionDto retrieve(String transactionId) {
-        Optional<Transaction> optionalTransaction = transactionRepository.findById(Long.valueOf(transactionId));
+    public TransactionDto retrieve(String id) {
+        Optional<Transaction> optionalTransaction = transactionRepository.findById(Long.valueOf(id));
         if (optionalTransaction.isPresent()) {
             Transaction transaction = optionalTransaction.get();
             return TransactionDto.builder()
@@ -44,7 +44,7 @@ public class TransactionServiceImpl implements TransactionService {
                     .title(transaction.getTitle())
                     .build();
         } else {
-            throw new NoSuchElementException("Transaction not found with id: " + transactionId);
+            throw new NoSuchElementException("Transaction not found with id: " + id);
         }
     }
 
@@ -58,8 +58,8 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
-    public TransactionDto update(String transactionId, TransactionDto transactionDto) {
-        Optional<Transaction> optionalTransaction = transactionRepository.findById(Long.valueOf(transactionId));
+    public TransactionDto update(String id, TransactionDto transactionDto) {
+        Optional<Transaction> optionalTransaction = transactionRepository.findById(Long.valueOf(id));
         if (optionalTransaction.isPresent()) {
             Transaction transaction = optionalTransaction.get();
                 transaction.setAmount(transactionDto.getAmount());
@@ -68,14 +68,14 @@ public class TransactionServiceImpl implements TransactionService {
                 transaction.setTitle(transactionDto.getTitle());
                 return transactionRepository.save(transaction).toDto();
             } else {
-                throw new NoSuchElementException("Transaction not found with id: " + transactionId);
+                throw new NoSuchElementException("Transaction not found with id: " + id);
             }
         }
 
     @Override
-    public boolean delete(String transactionId) {
-        if (transactionRepository.existsById(Long.valueOf(transactionId))) {
-            transactionRepository.deleteById(Long.valueOf(transactionId));
+    public boolean delete(String id) {
+        if (transactionRepository.existsById(Long.valueOf(id))) {
+            transactionRepository.deleteById(Long.valueOf(id));
             return true;
         }
         return false;

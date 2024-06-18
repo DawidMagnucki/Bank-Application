@@ -38,6 +38,7 @@ public class ClientServiceImpl implements ClientService {
         return ClientDto.builder()
                 .name(client.getName())
                 .phoneNumber(client.getPhoneNumber())
+                .indexNumber(client.getIndexNumber())
                 .build();
     }
     @Override

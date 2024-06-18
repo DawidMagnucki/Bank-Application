@@ -10,10 +10,10 @@ import java.util.List;
 @Service
 public interface TransactionService {
     TransactionDto create (TransactionDto transactionDto);
-    TransactionDto retrieve (String transactionId);
+    TransactionDto retrieve (String id);
     List<TransactionDto> retrieveAll ();
-    TransactionDto update (String transactionId, TransactionDto transactionDto);
-    boolean delete (String transactionId);
+    TransactionDto update (String id, TransactionDto transactionDto);
+    boolean delete (String id);
 
 
 }
