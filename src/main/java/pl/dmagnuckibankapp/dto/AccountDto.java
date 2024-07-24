@@ -1,5 +1,6 @@
 package pl.dmagnuckibankapp.dto;
 
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.*;
 import pl.dmagnuckibankapp.enums.AccountType;
 import pl.dmagnuckibankapp.model.Account;
@@ -19,6 +20,7 @@ import java.util.List;
 public class AccountDto {
 
     private String accountNumber;
+    @PositiveOrZero
     private BigDecimal balance;
     private String accountName;
     private AccountType accountType;
@@ -30,11 +32,11 @@ public class AccountDto {
 //        for (TransactionDto transaction : transactionDtos) {
 //            transactions.add(transaction.toEntity());
 //        }
+
         return Account.builder()
                 .accountNumber(accountNumber)
                 .balance(balance)
                 .client(clientDto.toEntity())
-//                .transactions(transactions)
                 .build();
     }
 

@@ -1,5 +1,7 @@
 package pl.dmagnuckibankapp.dto;
 
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +15,7 @@ import java.math.BigDecimal;
 @Data
 public class TransactionDto {
 
+    @Positive (message = "Amount must be over 0.00")
     private BigDecimal amount;
     private String recipient;
     private String sender;

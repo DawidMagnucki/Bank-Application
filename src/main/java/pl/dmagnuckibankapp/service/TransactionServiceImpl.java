@@ -3,7 +3,9 @@ package pl.dmagnuckibankapp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.dmagnuckibankapp.dto.TransactionDto;
+import pl.dmagnuckibankapp.model.Account;
 import pl.dmagnuckibankapp.model.Transaction;
+import pl.dmagnuckibankapp.repository.AccountRepository;
 import pl.dmagnuckibankapp.repository.TransactionRepository;
 
 import java.util.List;
@@ -14,16 +16,26 @@ import java.util.Optional;
 public class TransactionServiceImpl implements TransactionService {
 
     private final TransactionRepository transactionRepository;
+    private final AccountRepository accountRepository;
+
 
     @Autowired
-    public TransactionServiceImpl(TransactionRepository transactionRepository) {
+    public TransactionServiceImpl(TransactionRepository transactionRepository, AccountRepository accountRepository) {
         this.transactionRepository = transactionRepository;
+        this.accountRepository = accountRepository;
     }
 
     @Override
     public TransactionDto create(TransactionDto transactionDto) {
+        String senderAccountNumber = transactionDto.getSender();
+        Account accountNumber = accountRepository.findByAccountNumber(senderAccountNumber);
+        accountNumber.setBalance(accountNumber.getBalance().subtract(transactionDto.getAmount()));
+        accountRepository.save(accountNumber);
+        String recipientAccountNumber = transactionDto.getRecipient();
+        Account recipientNumber = accountRepository.findByAccountNumber(recipientAccountNumber);
+        recipientNumber.setBalance(recipientNumber.getBalance().add(transactionDto.getAmount()));
+        accountRepository.save(recipientNumber);
         Transaction transaction = Transaction.builder()
-
                 .amount(transactionDto.getAmount())
                 .recipient(transactionDto.getRecipient())
                 .sender(transactionDto.getSender())
@@ -62,15 +74,15 @@ public class TransactionServiceImpl implements TransactionService {
         Optional<Transaction> optionalTransaction = transactionRepository.findById(Long.valueOf(id));
         if (optionalTransaction.isPresent()) {
             Transaction transaction = optionalTransaction.get();
-                transaction.setAmount(transactionDto.getAmount());
-                transaction.setRecipient(transactionDto.getRecipient());
-                transaction.setSender(transactionDto.getSender());
-                transaction.setTitle(transactionDto.getTitle());
-                return transactionRepository.save(transaction).toDto();
-            } else {
-                throw new NoSuchElementException("Transaction not found with id: " + id);
-            }
+            transaction.setAmount(transactionDto.getAmount());
+            transaction.setRecipient(transactionDto.getRecipient());
+            transaction.setSender(transactionDto.getSender());
+            transaction.setTitle(transactionDto.getTitle());
+            return transactionRepository.save(transaction).toDto();
+        } else {
+            throw new NoSuchElementException("Transaction not found with id: " + id);
         }
+    }
 
     @Override
     public boolean delete(String id) {

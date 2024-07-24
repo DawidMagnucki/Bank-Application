@@ -1,5 +1,6 @@
 package pl.dmagnuckibankapp.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class TransactionController {
     }
 
     @PostMapping ("/create")
-    public ResponseEntity<TransactionDto> create (@RequestBody TransactionDto transactionDto){
+    public ResponseEntity<TransactionDto> create (@RequestBody @Valid TransactionDto transactionDto){
         TransactionDto savedTransaction = transactionService.create(transactionDto);
         return ResponseEntity.ok(savedTransaction);
     }
